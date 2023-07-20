@@ -1,16 +1,55 @@
+body{
+    margin: 0;
+}
+
+/* HEADER STYLING */
+.header{
+   
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.header-container{
+    display: flex;
+    padding-left: 150px;
+    padding-top: 10px;
+    
+}
+
+.open-form{
+    width: 160px;
+    height: 30px;
+    margin-top: 27px;
+    margin-left: 800px;
+
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Times New Roman';
+    border-radius: 8px;
+
+}
+
+.open-form:hover{
+    background-color: bisque;
+    cursor: pointer;
+}
+
+
+
+
 /* FORM STYLING */
 
 .form{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 100px;
+    margin: 0;
 }
 
 
 
 .form-container{
 
-    width: 500px;
+    width: 250px;
     height: 400px;
     border: 3px solid black;
     border-radius: 10px;
@@ -22,6 +61,8 @@
     gap: 20px;
 
     padding: 10px;
+    margin: 0;
+    
 }
 
 
@@ -58,7 +99,7 @@
     grid-template-columns: repeat(5, 0.5fr);
 
     padding-top: 45px;
-    padding-left: 45px;
+    padding-left: 110px;
     gap: 10px;
 }
 .book-border{
@@ -66,10 +107,12 @@
     height: 300px;
 
     border: 3px solid black;
+    box-shadow: black 5px 5px, black 10px 10px, black 15px 15px;
     border-radius: 15px;
 
     text-align: center;
     padding: 10px;
+
 
     font-family: sans-serif;
 }
@@ -88,7 +131,7 @@
 .read{
     width: 200px;
     height: 30px;
-    margin-top: 180px;
+    margin-top: 100px;
     
     background-color: green;
     border-radius: 5px;
@@ -98,7 +141,25 @@
 .not-read{
     width: 200px;
     height: 30px;
-    background-color: brown;
+    margin-top: 100px;
 
+    background-color: red;
+    border-radius: 5px;
+
+}
+
+.button-read{
+    align-items: center;
+    width: 80px;
+
+    border: 1px solid black;
+    box-shadow: black 5px 5px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.button-read:hover{
+    background-color: bisque;
+    cursor: pointer;
 }
 

@@ -1,0 +1,5 @@
+1. create a button -> when clicked opens up a form/popup where users can enter data.
+2. collect the data and store it in an object (create a object constructer) -> store the objects in an array.
+
+3. display the book title, author and pages on the users screen based on users inputted data.
+4. add a checkbox to check whether the user has read or not -> if checked -> green label, if not checked -> red label.

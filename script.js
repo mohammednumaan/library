@@ -19,7 +19,7 @@ addBookButton.addEventListener('click', () => {
 
 })
 
-submitButton.addEventListener('submit', main)
+submitButton.addEventListener('click', main)
     
 
 closeFormButton.addEventListener('click', () => {

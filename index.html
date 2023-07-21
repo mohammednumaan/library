@@ -17,7 +17,7 @@
     </div>
 
     <div class="form">
-        <form>
+        <form name="myForm">
             <div class="form-container">
                 <label for="book-title">Title Of Your Book</label>
                 <input type="text" id="book-title" name="bookTitle">
@@ -29,8 +29,8 @@
                 <input type="number" id="book-pages" name="bookPages" min="1">
 
                 <div class="box">
-                    <label for="check-read">Read</label>
-                    <input type="checkbox" id="check-read" name="readBook">
+                    <button type="button" id="check-read">Read</button>
+                    <button type="button" id="check-not-read">Not Read</button>
                 </div>
     
      
@@ -41,9 +41,12 @@
             </div>
         </form>
     </div>
+    <div class="overlay"></div>
 
     <div class="content">
     </div>
+
+    
     
 </body>
 </html>

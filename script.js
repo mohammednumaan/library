@@ -3,17 +3,11 @@ const formContainer = document.querySelector('.form-container')
 const addBookButton = document.querySelector('.open-form')
 const closeFormButton = document.querySelector('.close-form')
 const submitButton = document.querySelector('.submit-form')
-
 const content = document.querySelector('.content')
+const overlay = document.querySelector('.overlay')
 
-let checkbox = document.getElementById('check-read')
-
-checkbox.addEventListener('change',() => {
-
-})
-
-
-
+const readChoice = document.getElementById('check-read')
+const notReadChoice = document.getElementById('check-not-read')
 
 
 
@@ -22,18 +16,22 @@ checkbox.addEventListener('change',() => {
 addBookButton.addEventListener('click', () => {
     formContainer.style.display = 'flex'
 
+
 })
 
-submitButton.addEventListener('click',main)
+submitButton.addEventListener('click', main)
+    
+
 closeFormButton.addEventListener('click', () => {
     formContainer.style.display = 'none'
+    overlay.style.display ='none'
 })
 
 // library
 
 let myLibrary = [];
 let tempLibrary = [];
-let divArray = []
+
 
 
 function main(e){
@@ -49,6 +47,7 @@ function main(e){
         this.title = document.querySelector('#book-title').value
         this.author = document.querySelector('#book-author').value
         this.page = document.querySelector('#book-pages').value
+
     }
 
     // appending books to temp an main library
@@ -83,16 +82,18 @@ function displayMyLibrary(){
 
 
     // adds class lists to div, h2, p
+
     newDiv.classList.add('book-border')
     readButton.classList.add('button-read')
+    removeButton.classList.add('remove-button')
     
   
     
     // displays user entry inside the divs
+
     newTitle.textContent = `${tempLibrary.map(book => book.title)}`
     newAuthor.textContent = `Author - ${tempLibrary.map(book => book.author)}`
     newPage.textContent = `Number Of Pages - ${tempLibrary.map(book => book.page)}`
-
     readButton.textContent = 'Not Read'
     removeButton.textContent = 'Remove This Book'
     tempLibrary = []
@@ -113,7 +114,6 @@ function displayMyLibrary(){
 
 
 
-
     // read button 
 
     readButton.addEventListener('click' , () => {
@@ -129,6 +129,7 @@ function displayMyLibrary(){
         }
     })
     
+
     // remove button
 
     function removeBook(e){
@@ -138,6 +139,20 @@ function displayMyLibrary(){
         myLibrary.splice(currentIndex, 1)
         currentBook.remove()
     }
-
       removeButton.addEventListener('click', removeBook)
+
+
+    // read-not-read button
+
+    function checkRead(){
+        readLabel.classList.add('read')
+    }
+    function checkNoRead(){
+        readLabel.classList.add('not-read')
+    }
+
+    readChoice.addEventListener('click', checkRead)
+    notReadChoice.addEventListener('click', checkNoRead)
+
+
 }

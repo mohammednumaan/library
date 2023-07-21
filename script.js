@@ -42,11 +42,12 @@ function main(e){
 
     // book object constructor
 
-    let book = function (title, author, page) {
+    let book = function (title, author, page,read) {
 
         this.title = document.querySelector('#book-title').value
         this.author = document.querySelector('#book-author').value
         this.page = document.querySelector('#book-pages').value
+        this.read = document.querySelector('#check-read').checked
 
     }
 
@@ -94,12 +95,30 @@ function displayMyLibrary(){
     newTitle.textContent = `${tempLibrary.map(book => book.title)}`
     newAuthor.textContent = `Author - ${tempLibrary.map(book => book.author)}`
     newPage.textContent = `Number Of Pages - ${tempLibrary.map(book => book.page)}`
-    readButton.textContent = 'Not Read'
+    readButton.textContent = `${tempLibrary.map(book => book.read)}`
     removeButton.textContent = 'Remove This Book'
+    
+    // check if user has ticked read
+
+    
+    if (readButton.textContent === 'true'){
+        console.log(readButton.textContent)
+        readButton.textContent = 'Not Read'
+        readLabel.classList.add('read')
+        readLabel.classList.remove('not-read')
+
+    }
+
+    else{
+        readButton.textContent = 'Read'
+        readLabel.classList.add('not-read')
+        readLabel.classList.remove('read')
+
+
+    }
     tempLibrary = []
     
     
-
 
     // appends new div, h2, p to content div
 
@@ -139,20 +158,9 @@ function displayMyLibrary(){
         myLibrary.splice(currentIndex, 1)
         currentBook.remove()
     }
-      removeButton.addEventListener('click', removeBook)
-
-
-    // read-not-read button
-
-    function checkRead(){
-        readLabel.classList.add('read')
-    }
-    function checkNoRead(){
-        readLabel.classList.add('not-read')
-    }
-
-    readChoice.addEventListener('click', checkRead)
-    notReadChoice.addEventListener('click', checkNoRead)
-
+    removeButton.addEventListener('click', removeBook)
 
 }
+
+
+

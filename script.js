@@ -6,6 +6,11 @@ const submitButton = document.querySelector('.submit-form')
 const content = document.querySelector('.content')
 const overlay = document.querySelector('.overlay')
 
+const bookTitle = document.querySelector('#book-title')
+const bookAuthor = document.querySelector('#book-author')
+const bookPage = document.querySelector('#book-pages')
+const bookRead = document.querySelector('#check-read')
+
 const readChoice = document.getElementById('check-read')
 const notReadChoice = document.getElementById('check-not-read')
 
@@ -19,7 +24,7 @@ addBookButton.addEventListener('click', () => {
 
 })
 
-submitButton.addEventListener('click', main)
+
     
 
 closeFormButton.addEventListener('click', () => {
@@ -34,41 +39,31 @@ let tempLibrary = [];
 
 
 
-function main(e){
+class main{
 
-    // prevents default 
+    constructor(title, author, page, read){
 
-    e.preventDefault()
-
-    // book object constructor
-
-    let book = function (title, author, page,read) {
-
-        this.title = document.querySelector('#book-title').value
-        this.author = document.querySelector('#book-author').value
-        this.page = document.querySelector('#book-pages').value
-        this.read = document.querySelector('#check-read').checked
-
+        this.title = title
+        this.author = author
+        this.page = page
+        this.read = read
     }
 
-    // appending books to temp an main library
-
-    myLibrary.push(new book(book))
-    tempLibrary.push(new book(book))
-
-    // resets forms
-
-    document.forms[0].reset()
-
-    // displays the user entered books
-    formContainer.style.display = 'none'
-    displayMyLibrary()
-
-    
 }
 
 
 function displayMyLibrary(){
+
+     // appending books to temp an main library
+
+    myLibrary.push(new main(bookTitle.value, bookAuthor.value, bookPage.value, bookRead.checked))
+    tempLibrary.push(new main(bookTitle.value, bookAuthor.value, bookPage.value, bookRead.checked))
+    
+    // resets forms
+    
+    document.forms[0].reset()
+    formContainer.style.display = 'none'
+    
 
     // creates new div, h2 and p
    
@@ -164,3 +159,7 @@ function displayMyLibrary(){
 
 
 
+submitButton.addEventListener('click', (e) => {
+    e.preventDefault()
+    displayMyLibrary()
+})

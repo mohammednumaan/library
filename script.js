@@ -15,7 +15,6 @@ const readChoice = document.getElementById('check-read')
 const notReadChoice = document.getElementById('check-not-read')
 
 
-
 // form
 
 addBookButton.addEventListener('click', () => {
@@ -159,7 +158,7 @@ function displayMyLibrary(){
 
 
 
-submitButton.addEventListener('click', (e) => {
+mainForm.addEventListener('submit', (e) => {
     e.preventDefault()
     displayMyLibrary()
 })

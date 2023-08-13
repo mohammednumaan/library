@@ -5,6 +5,7 @@ body{
 }
 
 /* HEADER STYLING */
+
 .header{
    
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -85,8 +86,6 @@ body{
     color: #ADEFD1FF;
     border: 5px solid white;
     
-
-
     
 }
 
@@ -121,8 +120,15 @@ body{
     border-radius: 20px
 }
 
+.checkBox{
+    display: flex;
+    font-family: sans-serif;
+}
 
-/* BOOK STYLING */
+
+
+/* BOOK DIV */
+
 .content{
     display: grid;
     grid-template-columns: repeat(5, 0.5fr);
@@ -132,8 +138,12 @@ body{
     padding-right: 110px;
     gap: 20px;
 }
+
 .book-border{
-    width: 200px;
+    display: flex;
+    flex-direction: column;
+
+    width: 300px;
     height: 300px;
 
     border: 3px solid black;
@@ -149,20 +159,53 @@ body{
     color: #ADEFD1FF;
 }
 
+
 .book-border > div{
     width: 200px;
     height: 10px;
 
 }
 
-.box{
-    display: flex;
-    font-family: sans-serif;
+.book-border > h2,
+.book-border > h3{
+
+    font-size: 15px;
 }
+
+.label-div{
+
+    margin-top: 80px;
+}
+
+.button-read{
+    align-items: center;
+    width: 300px;
+    border: 1px solid black;
+    box-shadow: black 5px 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.remove-button{
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: black 5px 5px;
+    width: 300px;
+    
+}
+
+.button-read:hover,
+.remove-button:hover{
+    background-color: #ADEFD1FF;
+    cursor: pointer;
+}
+
+/* MISC */
 
 #check-read{
     margin-right: 10px;
 }
+
 
 #check-read:hover,
 #check-not-read:hover{
@@ -173,47 +216,20 @@ body{
 }
 
 .read{
-    width: 200px;
-    height: 30px;
-    margin-top: 60px;
-    
+
+    width: 300px;
+    height: 10px;
     background-color: green;
     border-radius: 5px;
 
 }
 
 .not-read{
-    width: 200px;
-    height: 30px;
-    margin-top: 60px;
-    
+    width: 300px;
+    height: 10px;    
     background-color: red;
     border-radius: 5px;
 
-
-}
-
-.button-read{
-    align-items: center;
-    width: 80px;
-
-    border: 1px solid black;
-    box-shadow: black 5px 5px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.remove-button{
-    border-radius: 10px;
-    border: 1px solid black;
-    box-shadow: black 5px 5px;
-    
-
-}
-.button-read:hover,
-.remove-button:hover{
-    background-color: #ADEFD1FF;
-    cursor: pointer;
 }
 
 hr{

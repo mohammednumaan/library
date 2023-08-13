@@ -24,8 +24,6 @@ addBookButton.addEventListener('click', () => {
 })
 
 
-    
-
 closeFormButton.addEventListener('click', () => {
     formContainer.style.display = 'none'
     overlay.style.display ='none'
@@ -35,8 +33,6 @@ closeFormButton.addEventListener('click', () => {
 
 let myLibrary = [];
 let tempLibrary = [];
-
-
 
 class main{
 
@@ -49,7 +45,6 @@ class main{
     }
 
 }
-
 
 function displayMyLibrary(){
 
@@ -73,6 +68,7 @@ function displayMyLibrary(){
     let horizontalLine =document.createElement('hr')
     let readButton = document.createElement('button')
     let removeButton = document.createElement('button')
+    let labelDiv = document.createElement('div')
     let readLabel = document.createElement('div')
 
 
@@ -81,6 +77,7 @@ function displayMyLibrary(){
     newDiv.classList.add('book-border')
     readButton.classList.add('button-read')
     removeButton.classList.add('remove-button')
+    labelDiv.classList.add('label-div')
     
   
     
@@ -122,7 +119,8 @@ function displayMyLibrary(){
     newDiv.appendChild(newPage)
     newDiv.appendChild(readButton)
     newDiv.appendChild(removeButton)
-    newDiv.appendChild(readLabel)
+    labelDiv.appendChild(readLabel)
+    newDiv.appendChild(labelDiv)
     newTitle.appendChild(horizontalLine)
 
 
@@ -157,6 +155,7 @@ function displayMyLibrary(){
 }
 
 
+// submit form
 
 mainForm.addEventListener('submit', (e) => {
     e.preventDefault()
